@@ -15,18 +15,13 @@ if __name__ == "__main__":
         for student in students:
             print(student["id"], student["name"], student["score"])
 
-        if len(students) > 0:
-            highest = student[n]
-            for students in students:
-                if student["score"] > highest["score"]:
-                    highest = student
+        students.sort(key= lambda x: x["score"], reverse= True)
+        print(f"The student with the highest score is: {students[0]["id"]} - {students[0]["name"]} - {students[0]["score"]}")
+        print("\n")
 
-            print("\n===STUDENT WITH HIGHEST SCORE===")
-            print(highest["id"], highest["name"], highest["score"])
-
-            total = 0
-            for student in students:
-                total = total + student["score"]
+        total = 0
+        for student in students:
+            total = total + student["score"]
             average = total / len(students)
 
             print("\n===AVARAGE SCORE===")
